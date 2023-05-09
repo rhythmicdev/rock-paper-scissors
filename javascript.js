@@ -41,7 +41,7 @@ function game() {
     let computerScore = 0;
 
     while (roundNumber < 5) {
-        let playerSelection = prompt("Make your choice!").toLowerCase();
+        let playerSelection = prompt("Make your choice! Rock, paper or scissors?").toLowerCase();
         let computerSelection = getComputerChoice();
         let theResult = playRound(playerSelection, computerSelection);
         if (theResult.includes("You win!") == true) {
