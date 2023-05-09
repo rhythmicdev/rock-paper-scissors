@@ -5,36 +5,34 @@ function getRandomInt(max) {
 function getComputerChoice() {
     let choiceNum = getRandomInt(3);
     if (choiceNum===0) {
-        computerChoice="rock";
+        return "rock";
     } else if (choiceNum===1) {
-        computerChoice="paper";
+        return "paper";
     } else if (choiceNum===2) {
-        computerChoice="scissors";
+        return "scissors";
     }
-    return computerChoice;
 }
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == "rock" && computerSelection == "paper") {
-        roundResult = "You chose rock and computer chose paper! You lose!";
+        return "You chose rock and computer chose paper! You lose!";
     } else if (playerSelection == "rock" && computerSelection == "scissors") {
-        roundResult = "You chose rock and computer chose scissors! You win!";
+        return "You chose rock and computer chose scissors! You win!";
     } else if (playerSelection == "rock" && computerSelection == "rock") {
-        roundResult = ("You and computer both chose rock! Draw!");
+        return ("You and computer both chose rock! Draw!");
     } else if (playerSelection == "paper" && computerSelection == "rock") {
-        roundResult = ("You chose paper and computer chose rock! You win!");
+        return ("You chose paper and computer chose rock! You win!");
     } else if (playerSelection == "paper" && computerSelection == "scissors") {
-        roundResult = "You chose paper and computer chose scissors! You lose!";
+        return "You chose paper and computer chose scissors! You lose!";
     } else if (playerSelection == "paper" && computerSelection == "paper") {
-        roundResult = "You and computer both chose paper! Draw!";
+        return "You and computer both chose paper! Draw!";
     } else if (playerSelection == "scissors" && computerSelection == "rock") {
-        roundResult = "You chose scissors and computer chose rock! You lose!";
+        return "You chose scissors and computer chose rock! You lose!";
     } else if (playerSelection == "scissors" && computerSelection == "scissors") {
-        roundResult = "You and computer both chose scissors! Draw!";
+        return "You and computer both chose scissors! Draw!";
     } else if (playerSelection == "scissors" && computerSelection == "paper") {
-        roundResult = "You chose scissors and computer chose paper! You win!";
+        return "You chose scissors and computer chose paper! You win!";
     }
-    return roundResult;
 }
 
 function game() {
