@@ -14,7 +14,6 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-
     if (playerSelection == "rock" && computerSelection == "paper") {
         return "You chose rock and computer chose paper! You lose!";
     } else if (playerSelection == "rock" && computerSelection == "scissors") {
@@ -128,7 +127,7 @@ btnScissors.addEventListener('click', () => {
     };
 });
 
-
+// Previous game function to play RPS in console
 // function game() {
 //     let roundNumber = 0;
 //     let playerScore = 0;
