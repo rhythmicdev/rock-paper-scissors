@@ -48,35 +48,57 @@ const btnRock = document.querySelector('#btnRock');
 const btnPaper = document.querySelector('#btnPaper');
 const btnScissors = document.querySelector('#btnScissors');
 const results = document.querySelector('#results');
+
 let round = 0;
+let playerScore = 0;
+let computerScore = 0;
 
 btnRock.addEventListener('click', () => {
     let playerSelection = 'rock';
     let computerSelection = getComputerChoice();
-    results.textContent = `${playRound(playerSelection, computerSelection)}`;
+    let roundResult = playRound(playerSelection, computerSelection);
+    if (roundResult.includes("You win!") == true) {
+        playerScore++;
+    } else if (roundResult.includes("You lose!") == true) {
+        computerScore++;
+    }
+    results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}`;
     round++;
     if (round == 5) {
-        results.textContent = `${playRound(playerSelection, computerSelection)} \n The game is over!`;
+        if (playerScore > computerScore) {
+            results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}. Game over! Player wins!`;
+        } else if (playerScore == computerScore) {
+            results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}. Game over! The game is a draw!`;
+        } else {
+            results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}. Game over! Computer wins!`;
+        }
+        playerScore = 0;
+        computerScore = 0;
+        round = 0;
     };
 });
 
 btnPaper.addEventListener('click', () => {
     let playerSelection = 'paper';
     let computerSelection = getComputerChoice();
-    results.textContent = `${playRound(playerSelection, computerSelection)}`;
+    let roundResult = playRound(playerSelection, computerSelection);
+    results.textContent = roundResult;
     round++;
     if (round == 5) {
-        results.textContent = 'The game is over';
+        results.textContent = `${roundResult} \nThe game is over!`;
+        round = 0;
     };
 });
 
 btnScissors.addEventListener('click', () => {
     let playerSelection = 'scissors';
     let computerSelection = getComputerChoice();
-    results.textContent = `${playRound(playerSelection, computerSelection)}`;
+    let roundResult = playRound(playerSelection, computerSelection);
+    results.textContent = roundResult;
     round++;
     if (round == 5) {
-        results.textContent = 'The game is over';
+        results.textContent = `${roundResult} \nThe game is over!`;
+        round = 0;
     };
 });
 
@@ -90,11 +112,11 @@ btnScissors.addEventListener('click', () => {
 //         let playerSelection = prompt("Make your choice! Rock, paper or scissors?").toLowerCase();
 //         let computerSelection = getComputerChoice();
 //         let theResult = playRound(playerSelection, computerSelection);
-//         if (theResult.includes("You win!") == true) {
-//             playerScore++;
-//         } else if (theResult.includes("You lose!") == true) {
-//             computerScore++;
-//         }
+        // if (theResult.includes("You win!") == true) {
+        //     playerScore++;
+        // } else if (theResult.includes("You lose!") == true) {
+        //     computerScore++;
+        // }
 //         console.log(theResult);
 //         console.log("Player: " + playerScore + " Computer: " + computerScore);
 //         roundNumber++;
