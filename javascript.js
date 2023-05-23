@@ -48,7 +48,6 @@ const btnPaper = document.querySelector('#btnPaper');
 const btnScissors = document.querySelector('#btnScissors');
 const results = document.querySelector('#results');
 
-let round = 0;
 let playerScore = 0;
 let computerScore = 0;
 
@@ -62,8 +61,7 @@ btnRock.addEventListener('click', () => {
         computerScore++;
     }
     results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}`;
-    round++;
-    if (round == 5) {
+    if (playerScore == 5 || computerScore == 5) {
         if (playerScore > computerScore) {
             results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}. Game over! Player wins!`;
         } else if (playerScore == computerScore) {
@@ -73,7 +71,6 @@ btnRock.addEventListener('click', () => {
         }
         playerScore = 0;
         computerScore = 0;
-        round = 0;
     };
 });
 
@@ -87,8 +84,7 @@ btnPaper.addEventListener('click', () => {
         computerScore++;
     }
     results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}`;
-    round++;
-    if (round == 5) {
+    if (playerScore == 5 || computerScore == 5) {
         if (playerScore > computerScore) {
             results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}. Game over! Player wins!`;
         } else if (playerScore == computerScore) {
@@ -98,7 +94,6 @@ btnPaper.addEventListener('click', () => {
         }
         playerScore = 0;
         computerScore = 0;
-        round = 0;
     };
 });
 
@@ -112,8 +107,7 @@ btnScissors.addEventListener('click', () => {
         computerScore++;
     }
     results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}`;
-    round++;
-    if (round == 5) {
+    if (playerScore == 5 || computerScore == 5) {
         if (playerScore > computerScore) {
             results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}. Game over! Player wins!`;
         } else if (playerScore == computerScore) {
@@ -123,7 +117,6 @@ btnScissors.addEventListener('click', () => {
         }
         playerScore = 0;
         computerScore = 0;
-        round = 0;
     };
 });
 
