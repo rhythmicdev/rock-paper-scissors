@@ -82,10 +82,23 @@ btnPaper.addEventListener('click', () => {
     let playerSelection = 'paper';
     let computerSelection = getComputerChoice();
     let roundResult = playRound(playerSelection, computerSelection);
-    results.textContent = roundResult;
+    if (roundResult.includes("You win!") == true) {
+        playerScore++;
+    } else if (roundResult.includes("You lose!") == true) {
+        computerScore++;
+    }
+    results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}`;
     round++;
     if (round == 5) {
-        results.textContent = `${roundResult} \nThe game is over!`;
+        if (playerScore > computerScore) {
+            results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}. Game over! Player wins!`;
+        } else if (playerScore == computerScore) {
+            results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}. Game over! The game is a draw!`;
+        } else {
+            results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}. Game over! Computer wins!`;
+        }
+        playerScore = 0;
+        computerScore = 0;
         round = 0;
     };
 });
@@ -94,10 +107,23 @@ btnScissors.addEventListener('click', () => {
     let playerSelection = 'scissors';
     let computerSelection = getComputerChoice();
     let roundResult = playRound(playerSelection, computerSelection);
-    results.textContent = roundResult;
+    if (roundResult.includes("You win!") == true) {
+        playerScore++;
+    } else if (roundResult.includes("You lose!") == true) {
+        computerScore++;
+    }
+    results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}`;
     round++;
     if (round == 5) {
-        results.textContent = `${roundResult} \nThe game is over!`;
+        if (playerScore > computerScore) {
+            results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}. Game over! Player wins!`;
+        } else if (playerScore == computerScore) {
+            results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}. Game over! The game is a draw!`;
+        } else {
+            results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}. Game over! Computer wins!`;
+        }
+        playerScore = 0;
+        computerScore = 0;
         round = 0;
     };
 });
