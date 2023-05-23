@@ -35,35 +35,45 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-    let roundNumber = 0;
-    let playerScore = 0;
-    let computerScore = 0;
-
-    while (roundNumber < 5) {
-        let playerSelection = prompt("Make your choice! Rock, paper or scissors?").toLowerCase();
-        let computerSelection = getComputerChoice();
-        let theResult = playRound(playerSelection, computerSelection);
-        if (theResult.includes("You win!") == true) {
-            playerScore++;
-        } else if (theResult.includes("You lose!") == true) {
-            computerScore++;
-        }
-        console.log(theResult);
-        console.log("Player: " + playerScore + " Computer: " + computerScore);
-        roundNumber++;
-    }
-
-    if  (playerScore > computerScore) {
-        console.log("You win the game!");
-    } else if (playerScore == computerScore) {
-        console.log("The game is a draw!");
-    } else {
-        console.log("Computer wins the game!")
-    }
+function aTest () {
+    console.log('Test');
 }
 
-game();
+const btnRock = document.querySelector('#btnRock');
+const btnPaper = document.querySelector('#btnPaper');
+const btnScissors = document.querySelector('#btnScissors');
+
+btnRock.addEventListener('click', playRound);
+
+// function game() {
+//     let roundNumber = 0;
+//     let playerScore = 0;
+//     let computerScore = 0;
+
+//     while (roundNumber < 5) {
+//         let playerSelection = prompt("Make your choice! Rock, paper or scissors?").toLowerCase();
+//         let computerSelection = getComputerChoice();
+//         let theResult = playRound(playerSelection, computerSelection);
+//         if (theResult.includes("You win!") == true) {
+//             playerScore++;
+//         } else if (theResult.includes("You lose!") == true) {
+//             computerScore++;
+//         }
+//         console.log(theResult);
+//         console.log("Player: " + playerScore + " Computer: " + computerScore);
+//         roundNumber++;
+//     }
+
+//     if  (playerScore > computerScore) {
+//         console.log("You win the game!");
+//     } else if (playerScore == computerScore) {
+//         console.log("The game is a draw!");
+//     } else {
+//         console.log("Computer wins the game!")
+//     }
+// }
+
+// game();
 
 //For testing
 //const playerSelection = "scissors";
