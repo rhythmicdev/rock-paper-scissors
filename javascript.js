@@ -64,8 +64,6 @@ btnRock.addEventListener('click', () => {
     if (playerScore == 5 || computerScore == 5) {
         if (playerScore > computerScore) {
             results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}. Game over! Player wins!`;
-        } else if (playerScore == computerScore) {
-            results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}. Game over! The game is a draw!`;
         } else {
             results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}. Game over! Computer wins!`;
         }
@@ -87,8 +85,6 @@ btnPaper.addEventListener('click', () => {
     if (playerScore == 5 || computerScore == 5) {
         if (playerScore > computerScore) {
             results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}. Game over! Player wins!`;
-        } else if (playerScore == computerScore) {
-            results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}. Game over! The game is a draw!`;
         } else {
             results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}. Game over! Computer wins!`;
         }
@@ -110,8 +106,6 @@ btnScissors.addEventListener('click', () => {
     if (playerScore == 5 || computerScore == 5) {
         if (playerScore > computerScore) {
             results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}. Game over! Player wins!`;
-        } else if (playerScore == computerScore) {
-            results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}. Game over! The game is a draw!`;
         } else {
             results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}. Game over! Computer wins!`;
         }
