@@ -54,6 +54,18 @@ btnRock.addEventListener('click', () => {
     console.log(playRound(playerSelection, computerSelection));
 });
 
+btnPaper.addEventListener('click', () => {
+    let playerSelection = 'paper';
+    let computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection));
+});
+
+btnScissors.addEventListener('click', () => {
+    let playerSelection = 'scissors';
+    let computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection));
+});
+
 // function game() {
 //     let roundNumber = 0;
 //     let playerScore = 0;
