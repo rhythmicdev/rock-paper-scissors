@@ -48,24 +48,38 @@ const btnRock = document.querySelector('#btnRock');
 const btnPaper = document.querySelector('#btnPaper');
 const btnScissors = document.querySelector('#btnScissors');
 const results = document.querySelector('#results');
+let round = 0;
 
 btnRock.addEventListener('click', () => {
     let playerSelection = 'rock';
     let computerSelection = getComputerChoice();
     results.textContent = `${playRound(playerSelection, computerSelection)}`;
+    round++;
+    if (round == 5) {
+        results.textContent = `${playRound(playerSelection, computerSelection)} \n The game is over!`;
+    };
 });
 
 btnPaper.addEventListener('click', () => {
     let playerSelection = 'paper';
     let computerSelection = getComputerChoice();
     results.textContent = `${playRound(playerSelection, computerSelection)}`;
+    round++;
+    if (round == 5) {
+        results.textContent = 'The game is over';
+    };
 });
 
 btnScissors.addEventListener('click', () => {
     let playerSelection = 'scissors';
     let computerSelection = getComputerChoice();
     results.textContent = `${playRound(playerSelection, computerSelection)}`;
+    round++;
+    if (round == 5) {
+        results.textContent = 'The game is over';
+    };
 });
+
 
 // function game() {
 //     let roundNumber = 0;
