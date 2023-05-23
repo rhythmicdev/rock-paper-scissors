@@ -14,6 +14,7 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
+
     if (playerSelection == "rock" && computerSelection == "paper") {
         return "You chose rock and computer chose paper! You lose!";
     } else if (playerSelection == "rock" && computerSelection == "scissors") {
@@ -35,11 +36,23 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+//For testing
+// const playerSelection = "scissors";
+// const computerSelection = getComputerChoice();
+// function aTest() {
+//     console.log("test");
+// }
+//console.log(playRound(playerSelection, computerSelection));
+
 const btnRock = document.querySelector('#btnRock');
 const btnPaper = document.querySelector('#btnPaper');
 const btnScissors = document.querySelector('#btnScissors');
 
-
+btnRock.addEventListener('click', () => {
+    let playerSelection = 'rock';
+    let computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection));
+});
 
 // function game() {
 //     let roundNumber = 0;
@@ -70,8 +83,3 @@ const btnScissors = document.querySelector('#btnScissors');
 // }
 
 // game();
-
-//For testing
-//const playerSelection = "scissors";
-//const computerSelection = getComputerChoice();
-//console.log(playRound(playerSelection, computerSelection));
