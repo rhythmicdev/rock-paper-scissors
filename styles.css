@@ -23,14 +23,14 @@ html, body, #container {
     border-radius: 8px;
     margin-left: 25px;
     margin-right: 25px;
-    background-color: darkcyan;
+    background-color: orchid;
     color: white;
     font-size: 18px;
 }
 
 #header, #footer {
     padding: 10px;
-    background-color: purple;
+    background-color: darkorchid;
     color: white;
     text-align: center;
 }
