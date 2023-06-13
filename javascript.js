@@ -63,9 +63,13 @@ btnRock.addEventListener('click', () => {
     results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}`;
     if (playerScore == 5 || computerScore == 5) {
         if (playerScore > computerScore) {
-            results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}. Game over! Player wins!`;
+            results.textContent = `${roundResult}
+            \nThe score is player: ${playerScore}, computer: ${computerScore}. 
+            \nGame over! Player wins!`;
         } else {
-            results.textContent = `${roundResult} \n The score is player: ${playerScore}, computer: ${computerScore}. Game over! Computer wins!`;
+            results.textContent = `${roundResult}
+            \nThe score is player: ${playerScore}, computer: ${computerScore}. 
+            \nGame over! Computer wins!`;
         }
         playerScore = 0;
         computerScore = 0;
